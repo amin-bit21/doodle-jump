@@ -43,4 +43,40 @@ class Character {
       // comma used to separate arguments
     );
   }
+  move() {
+    if (this.vy === undefined) {
+      this.vy = 0;
+    }
+    //0.4  is the strength of gravity check if it
+    // needs adjustment later // this.vy makes it bounce again 
+    this.vy = this.vy + 0.4;
+    this.ypos = this.ypos + this.vy;
+
+// keyIsDown() = p5.js function checking if a key is held down
+// LEFT_ARROW = p5.js constant for the left arrow key
+
+  if(keyIsDown(LEFT_ARROW)){
+    this.xpos = this.xpos -5;
+  }
+    if(keyIsDown(RIGHT_ARROW)){
+      this.xpos = this.xpos +5;
+      
+
+    }
+    if(this.xpos > width){
+      this.xpos = -this.width; //The minus sign (-) places the character just outside the left edge of the canvas smoothly
+
+    }
+if(this.xpos + this.width < 0) {
+  this.xpos = width;
+}
+  
+  }
+  jump() {
+    this.vy = -14;
+  }
+
+
+  
+  
 }
