@@ -11,6 +11,7 @@ function draw() {
   // rectangular shape button
   background(240);
   if (!started) {
+    //!started checks if started is false
     fill(255);
     stroke(0);
     strokeWeight(2);
